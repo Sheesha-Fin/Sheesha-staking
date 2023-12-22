@@ -67,7 +67,10 @@ contract JustStaking is JustStakingAdmin {
         totalDeposit -= _amount;
 
         _safeTransferFrom(depositToken, address(this), _sender, _amount);
-        _safeTransferFrom(rewardToken, address(this), _sender, _rewardAmount);
+
+        if (_rewardAmount > 0) {
+            _safeTransferFrom(rewardToken, address(this), _sender, _rewardAmount);
+        }
 
         emit Withdraw(_sender, _amount, _rewardAmount);
     }
@@ -82,7 +85,7 @@ contract JustStaking is JustStakingAdmin {
     ) external view override returns (uint256 _rewardAmount) {
         DepositInfo storage _deposit = deposits[depositor];
         if (_deposit.amount > 0) {
-            (uint256 _cumulativeReward, , ) = _calculateCumulativeReward();
+            (uint256 _cumulativeReward, ,) = _calculateCumulativeReward();
             _rewardAmount = _depositorReward(_deposit, _cumulativeReward);
         }
     }
