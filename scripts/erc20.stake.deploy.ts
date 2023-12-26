@@ -1,9 +1,9 @@
 import { ethers } from "hardhat";
 
-// 0xa39930B1b1AFD6538EA6B9dEf2Dfd51863949c41
+// 0x454607a29e17315cC284639Ed57A430b64C5Be91
 async function main() {
   const fERC20MockFactory = await ethers.getContractFactory("ERC20Mock");
-  const symbol = "USDT";
+  const symbol = "mSheesha";
   const erc20 = await fERC20MockFactory.deploy(symbol);
   await erc20.waitForDeployment();
 

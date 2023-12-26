@@ -1,11 +1,18 @@
-import { HardhatUserConfig } from "hardhat/config";
-import "@nomicfoundation/hardhat-toolbox";
-import "@openzeppelin/hardhat-upgrades";
+// import { HardhatUserConfig } from "hardhat/config";
+// import "@nomicfoundation/hardhat-toolbox";
+// import "@openzeppelin/hardhat-upgrades";
+// import "dotenv";
 
-import * as dotenv from "dotenv";
-dotenv.config({ path: __dirname + "/.env" });
+require('@openzeppelin/hardhat-upgrades');
+require("@nomicfoundation/hardhat-verify");
+require("hardhat/config");
+require('dotenv').config({ path: __dirname + '/.env' })
 
-const config: HardhatUserConfig = {
+
+// import * as dotenv from "dotenv";
+// dotenv.config({ path: __dirname + "/.env" });
+//
+module.exports = {
   solidity: {
     compilers: [
       {
@@ -41,20 +48,20 @@ const config: HardhatUserConfig = {
       gasPrice: 20000000000,
       timeout: 300000,
     },
-    polygon: {
-      url: process.env.POLYGON_URL || "",
-      accounts: [process.env.MAINNET_PRIVATE_KEY || ""],
-      chainId: 137,
-      //gasPrice: 5000000000,
-      timeout: 300000,
-    },
-    mumbai: {
-      url: process.env.MUMBAI_URL || "",
-      accounts: [process.env.PRIVATE_KEY || ""],
-      chainId: 80001,
-      //gasPrice: 5000000000,
-      timeout: 300000,
-    },
+    // polygon: {
+    //   url: process.env.POLYGON_URL || "",
+    //   accounts: [process.env.MAINNET_PRIVATE_KEY || ""],
+    //   chainId: 137,
+    //   //gasPrice: 5000000000,
+    //   timeout: 300000,
+    // },
+    // mumbai: {
+    //   url: process.env.MUMBAI_URL || "",
+    //   accounts: [process.env.PRIVATE_KEY || ""],
+    //   chainId: 80001,
+    //   //gasPrice: 5000000000,
+    //   timeout: 300000,
+    // },
   },
   mocha: {
     timeout: 30000000,
@@ -77,4 +84,4 @@ const config: HardhatUserConfig = {
   },
 };
 
-export default config;
+// export default config;

@@ -3,10 +3,10 @@ import { ethers, upgrades } from "hardhat";
 async function main() {
   //const fromBlockNumber = (await ethers.provider.getBlockNumber()) + 10;
   const payload = {
-    depositToken: "0x608E3066ebCD480Ff6969C1DBdA4Eb73320698e4",
-    rewardToken: "0x69CA1c6D27368DAa3395D8A6A5c35A9D3F959883",
-    fromBlock: 4865734,
-    toBlock: 4887350,
+    depositToken: "0x454607a29e17315cC284639Ed57A430b64C5Be91",
+    rewardToken: "0xa39930B1b1AFD6538EA6B9dEf2Dfd51863949c41",
+    fromBlock: 4955539,
+    toBlock: 4962739,
     maximumTotalDeposit: "10000000000000000000000000",
   };
 

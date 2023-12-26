@@ -7,6 +7,9 @@
     "test": "test"
   },
   "dependencies": {
+    "@nomicfoundation/hardhat-verify": "^2.0.3",
+    "@openzeppelin/contracts": "^5.0.1",
+    "@openzeppelin/contracts-upgradeable": "^5.0.1",
     "abstract-level": "^1.0.3",
     "adm-zip": "^0.4.16",
     "aes-js": "^3.0.0",

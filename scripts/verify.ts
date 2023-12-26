@@ -2,7 +2,7 @@ import * as hre from "hardhat";
 
 async function main() {
   await hre.run("verify:verify", {
-    address: "0x0Ea47ed74283784eD6b9529eBc3403f0fe24Dc5b",
+    address: "0xA98996781E5ccb4D82Cc0fc44A6a9433f1D3707e",
   });
 }
 
