@@ -11,6 +11,15 @@ abstract contract JustStakingAdmin is JustStakingStorage {
     using SafeERC20 for IERC20;
 
     /**
+     * @dev Sets a new maximum total deposit value by contract owner
+     */
+    function setMaximumTotalDeposit(uint256 _maximumTotalDeposit) external override onlyOwner {
+        require(_maximumTotalDeposit != maximumTotalDeposit, "SV");
+        maximumTotalDeposit =_maximumTotalDeposit;
+        emit MaximumTotalDepositSet(_msgSender(), _maximumTotalDeposit);
+    }
+
+    /**
      * @dev Moves unused rewards after toBlock to owner
      */
     function removeReward() external override {

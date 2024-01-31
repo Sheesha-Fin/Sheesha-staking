@@ -15,6 +15,11 @@ interface IJustStaking {
     function withdraw() external;
 
     /**
+     * @dev Sets a new maximum total deposit value by contract owner
+     */
+    function setMaximumTotalDeposit(uint256 _maximumTotalDeposit) external;
+
+    /**
      * @dev Moves unused rewards after toBlock to owner
      */
     function removeReward() external;
@@ -87,6 +92,7 @@ interface IJustStaking {
 
     event Deposit(address indexed, uint256, uint256);
     event Withdraw(address indexed, uint256, uint256);
+    event MaximumTotalDepositSet(address indexed, uint256);
     event RewardAdded(address indexed, uint256, uint256);
     event RewardRemoved(address indexed, uint256);
 }
